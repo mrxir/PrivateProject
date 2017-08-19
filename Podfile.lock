@@ -1,0 +1,24 @@
+PODS:
+  - IQKeyboardManager (4.0.11)
+  - MRTextFieldCollection (1.0.0)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - MRTextFieldCollection (from `https://github.com/mrxir/MRTextFieldCollection.git`)
+
+EXTERNAL SOURCES:
+  MRTextFieldCollection:
+    :git: https://github.com/mrxir/MRTextFieldCollection.git
+
+CHECKOUT OPTIONS:
+  MRTextFieldCollection:
+    :commit: ef9e1af2927ba3a93d19c51d47fbcb068610cb7c
+    :git: https://github.com/mrxir/MRTextFieldCollection.git
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
+  MRTextFieldCollection: 3795eaf59ddd4158bc8f8068cb985d2d19e24a55
+
+PODFILE CHECKSUM: 56c23e874f6d44261674ddb20f2683f2ae3b6360
+
+COCOAPODS: 1.2.1

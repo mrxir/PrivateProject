@@ -13,45 +13,21 @@ const CGFloat presetRatio = presetSize / 375.0f;
 
 @interface InputBox ()
 
-@property (nonatomic, weak) IBOutlet UIView *view;
-
-@property (nonatomic, weak) IBOutlet UIView *contentView;
-
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewWidthConstraint;
-
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
-
-@property (nonatomic, weak) IBOutlet UILabel *firstLabel;
-@property (nonatomic, weak) IBOutlet UITextField *firstField;
-
-@property (nonatomic, weak) IBOutlet UILabel *secondLabel;
-@property (nonatomic, weak) IBOutlet UITextField *secondField;
-
-@property (nonatomic, weak) IBOutlet UILabel *thirdLabel;
-@property (nonatomic, weak) IBOutlet UITextField *thirdField;
-
-@property (nonatomic, weak) IBOutlet UIView *buttonContentView;
-
-@property (nonatomic, weak) IBOutlet UIButton *cancelButton;
-@property (nonatomic, weak) IBOutlet UIButton *doneButton;
-
-@property (nonatomic, copy) InputCompletionBlock inputCompletionBlock;
-
 @end
 
 @implementation InputBox
 
-+ (void)showInputTitle:(NSString *)title
-                inView:(UIView *)superView
-            firstLabel:(NSString *)firstLabel
-      firstPlaceholder:(NSString *)firstPlaceholder
-           secondLabel:(NSString *)secondLabel
-     secondPlaceholder:(NSString *)secondPlaceholder
-            thirdLabel:(NSString *)thirdLabel
-      thirdPlaceholder:(NSString *)thirdPlaceholder
-     cancelButtonTitle:(NSString *)cancelTitle
-       doneButtonTitle:(NSString *)doneTitle
-  doneButtonCompletion:(InputCompletionBlock)doneCompletion
++ (instancetype)showInputTitle:(NSString *)title
+                        inView:(UIView *)superView
+                    firstLabel:(NSString *)firstLabel
+              firstPlaceholder:(NSString *)firstPlaceholder
+                   secondLabel:(NSString *)secondLabel
+             secondPlaceholder:(NSString *)secondPlaceholder
+                    thirdLabel:(NSString *)thirdLabel
+              thirdPlaceholder:(NSString *)thirdPlaceholder
+             cancelButtonTitle:(NSString *)cancelTitle
+               doneButtonTitle:(NSString *)doneTitle
+          doneButtonCompletion:(InputCompletionBlock)doneCompletion
 {
     InputBox *box = [[InputBox alloc] initWithFrame:[UIScreen mainScreen].bounds];
     box.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -66,7 +42,7 @@ const CGFloat presetRatio = presetSize / 375.0f;
     
     box.thirdLabel.text = thirdLabel;
     box.thirdField.text = thirdPlaceholder;
-
+    
     [box.doneButton setTitle:doneTitle forState:UIControlStateNormal];
     
     box.inputCompletionBlock = doneCompletion;
@@ -76,11 +52,24 @@ const CGFloat presetRatio = presetSize / 375.0f;
     [box.cancelButton setTitle:cancelTitle forState:UIControlStateNormal];
     
     [box.cancelButton addTarget:box action:@selector(didClickCancelButton:) forControlEvents:UIControlEventTouchUpInside];
-
+    
+    [box.closeButton addTarget:box action:@selector(didClickCancelButton:) forControlEvents:UIControlEventTouchUpInside];
+    
     [superView addSubview:box];
     
     [box animateView];
     
+    return box;
+    
+}
+
+- (void)dismiss
+{
+    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionShowHideTransitionViews animations:^{
+        self.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
 }
 
 #pragma mark - life cycle
@@ -142,20 +131,16 @@ const CGFloat presetRatio = presetSize / 375.0f;
 
     self.contentView.layer.cornerRadius = 10.0f;
     
+    self.contentView.layer.masksToBounds = YES;
+    
     self.buttonContentView.layer.cornerRadius = CGRectGetHeight(self.buttonContentView.bounds)/2.0f;
+    
+    // 右上角关闭按钮隐藏
+    self.closeButtonContentView.hidden = YES;
     
 }
 
 #pragma mark - private method
-
-- (void)dismiss
-{
-    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionShowHideTransitionViews animations:^{
-        self.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-    }];
-}
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -166,8 +151,9 @@ const CGFloat presetRatio = presetSize / 375.0f;
 
 - (void)didClickDoneButton:(UIButton *)button
 {
+    __weak typeof(self) _self = self;
     if (self.inputCompletionBlock != NULL) {
-        self.inputCompletionBlock(self.firstField.text, self.secondField.text, self.thirdField.text);
+        self.inputCompletionBlock(_self, _self.firstField.text, _self.secondField.text, _self.thirdField.text);
     }
 }
 

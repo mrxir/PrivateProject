@@ -16,6 +16,7 @@
 		67DEEFC51F4811F2000A7D08 /* InputBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DEEFC41F4811F2000A7D08 /* InputBox.m */; };
 		67DEEFC71F4811FE000A7D08 /* InputBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67DEEFC61F4811FE000A7D08 /* InputBox.xib */; };
 		67DEEFD01F484837000A7D08 /* bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 67DEEFCF1F484837000A7D08 /* bg.jpeg */; };
+		67DEEFD21F4A740D000A7D08 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67DEEFD11F4A740D000A7D08 /* close@2x.png */; };
 		FA21A084D6768D023E67B2E7 /* libPods-PrivateProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCC2C9EA036D89DD8A4F9C9 /* libPods-PrivateProject.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		67DEEFC41F4811F2000A7D08 /* InputBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBox.m; sourceTree = "<group>"; };
 		67DEEFC61F4811FE000A7D08 /* InputBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputBox.xib; sourceTree = "<group>"; };
 		67DEEFCF1F484837000A7D08 /* bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpeg; sourceTree = "<group>"; };
+		67DEEFD11F4A740D000A7D08 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		DC6E52786A5C2985251C42B6 /* Pods-PrivateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrivateProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrivateProject/Pods-PrivateProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 		67DEEFC01F47EFA7000A7D08 /* InputBox */ = {
 			isa = PBXGroup;
 			children = (
+				67DEEFD11F4A740D000A7D08 /* close@2x.png */,
 				67DEEFC31F4811F2000A7D08 /* InputBox.h */,
 				67DEEFC41F4811F2000A7D08 /* InputBox.m */,
 				67DEEFC61F4811FE000A7D08 /* InputBox.xib */,
@@ -195,6 +198,7 @@
 				67DEEFD01F484837000A7D08 /* bg.jpeg in Resources */,
 				67DEEFB81F47EF2D000A7D08 /* LaunchScreen.storyboard in Resources */,
 				67DEEFC71F4811FE000A7D08 /* InputBox.xib in Resources */,
+				67DEEFD21F4A740D000A7D08 /* close@2x.png in Resources */,
 				67DEEFB51F47EF2D000A7D08 /* Assets.xcassets in Resources */,
 				67DEEFB31F47EF2D000A7D08 /* Main.storyboard in Resources */,
 			);

@@ -14,11 +14,14 @@
             <connections>
                 <outlet property="buttonContentView" destination="VcY-up-1Aa" id="AdF-7J-oo8"/>
                 <outlet property="cancelButton" destination="pGa-w8-lnu" id="MMi-sA-eo8"/>
+                <outlet property="closeButton" destination="IMM-2h-bfN" id="JdZ-Xo-HRV"/>
+                <outlet property="closeButtonContentView" destination="Ma9-Aw-iM3" id="ke3-2o-PhI"/>
                 <outlet property="contentView" destination="FWY-j5-xKG" id="smQ-gv-CA8"/>
                 <outlet property="contentViewWidthConstraint" destination="aWI-ta-rAy" id="lxY-fu-5Y6"/>
                 <outlet property="doneButton" destination="Wcs-ga-0MU" id="rib-AO-KMw"/>
                 <outlet property="firstField" destination="wnx-MD-4ab" id="8ev-xZ-RHZ"/>
                 <outlet property="firstLabel" destination="ud9-w7-Fo7" id="XYr-n3-Rtq"/>
+                <outlet property="inputContentView" destination="AoZ-Qy-Guk" id="Vbq-Oi-onA"/>
                 <outlet property="secondField" destination="5dB-7H-Un1" id="2KM-0q-ALH"/>
                 <outlet property="secondLabel" destination="1hA-cL-UwY" id="eig-n1-dl2"/>
                 <outlet property="thirdField" destination="gZT-Ai-55h" id="YcZ-Va-QCN"/>
@@ -83,7 +86,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="wnx-MD-4ab" secondAttribute="bottom" id="BOT-rr-Iuv"/>
                                                 <constraint firstItem="wnx-MD-4ab" firstAttribute="leading" secondItem="bN8-My-eHi" secondAttribute="leading" constant="4" id="Kjr-fe-HzL"/>
@@ -92,7 +95,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="41" id="3lc-77-NCe"/>
                                         <constraint firstItem="bN8-My-eHi" firstAttribute="leading" secondItem="ud9-w7-Fo7" secondAttribute="trailing" constant="6" id="8y8-se-ZqD"/>
@@ -139,7 +142,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="5dB-7H-Un1" secondAttribute="trailing" id="8dk-kf-M4y"/>
                                                 <constraint firstItem="5dB-7H-Un1" firstAttribute="top" secondItem="3WX-dC-aF4" secondAttribute="top" id="GBC-a9-jqR"/>
@@ -148,7 +151,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="41" id="0FP-l7-YsL"/>
                                         <constraint firstItem="1hA-cL-UwY" firstAttribute="centerY" secondItem="gBr-gg-NmY" secondAttribute="centerY" id="8Za-D4-Kxg"/>
@@ -195,7 +198,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="gZT-Ai-55h" secondAttribute="bottom" id="Mf4-nv-hJu"/>
                                                 <constraint firstItem="gZT-Ai-55h" firstAttribute="leading" secondItem="WYv-pI-eH2" secondAttribute="leading" constant="4" id="RdV-Jc-yd9"/>
@@ -204,7 +207,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="WYv-pI-eH2" secondAttribute="bottom" id="0fx-xX-x1h"/>
                                         <constraint firstItem="WYv-pI-eH2" firstAttribute="top" secondItem="Fl7-eV-1fj" secondAttribute="top" id="0pm-4t-P62"/>
@@ -216,7 +219,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="5aH-WF-k6A" firstAttribute="leading" secondItem="AoZ-Qy-Guk" secondAttribute="leading" id="0UO-WJ-qHu"/>
                                 <constraint firstAttribute="trailing" secondItem="Fl7-eV-1fj" secondAttribute="trailing" id="5Au-1P-78z"/>
@@ -267,6 +270,24 @@
                                 <constraint firstItem="Wcs-ga-0MU" firstAttribute="height" secondItem="pGa-w8-lnu" secondAttribute="height" id="xrv-kc-9ER"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ma9-Aw-iM3">
+                            <rect key="frame" x="231" y="0.0" width="41" height="41"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-2h-bfN">
+                                    <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                    <state key="normal" image="close.png"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Ma9-Aw-iM3" secondAttribute="height" id="Be6-io-J1f"/>
+                                <constraint firstItem="IMM-2h-bfN" firstAttribute="top" secondItem="Ma9-Aw-iM3" secondAttribute="top" id="d7B-p8-Lbf"/>
+                                <constraint firstAttribute="trailing" secondItem="IMM-2h-bfN" secondAttribute="trailing" id="hqU-mU-cCe"/>
+                                <constraint firstAttribute="width" constant="41" id="iJ9-HE-r9z"/>
+                                <constraint firstAttribute="bottom" secondItem="IMM-2h-bfN" secondAttribute="bottom" id="lFa-og-cmt"/>
+                                <constraint firstItem="IMM-2h-bfN" firstAttribute="leading" secondItem="Ma9-Aw-iM3" secondAttribute="leading" id="oJQ-rR-anl"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -274,6 +295,8 @@
                         <constraint firstAttribute="trailing" secondItem="GAP-6W-MiJ" secondAttribute="trailing" constant="15" id="DPs-cj-nlU"/>
                         <constraint firstAttribute="trailing" secondItem="AoZ-Qy-Guk" secondAttribute="trailing" constant="15" id="HIo-MG-mLa"/>
                         <constraint firstItem="AoZ-Qy-Guk" firstAttribute="leading" secondItem="FWY-j5-xKG" secondAttribute="leading" constant="15" id="KvV-OI-Ymi"/>
+                        <constraint firstAttribute="trailing" secondItem="Ma9-Aw-iM3" secondAttribute="trailing" id="LTc-yH-gj2"/>
+                        <constraint firstItem="Ma9-Aw-iM3" firstAttribute="top" secondItem="FWY-j5-xKG" secondAttribute="top" id="PYv-zy-Hxd"/>
                         <constraint firstAttribute="width" constant="272" id="aWI-ta-rAy"/>
                         <constraint firstItem="AoZ-Qy-Guk" firstAttribute="top" secondItem="GAP-6W-MiJ" secondAttribute="bottom" constant="10" id="cnh-8X-5jV"/>
                         <constraint firstItem="VcY-up-1Aa" firstAttribute="top" secondItem="AoZ-Qy-Guk" secondAttribute="bottom" constant="20" id="dt0-rh-wnH"/>
@@ -293,4 +316,7 @@
             <point key="canvasLocation" x="-59.5" y="-14.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="close.png" width="32" height="32"/>
+    </resources>
 </document>

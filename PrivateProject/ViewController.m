@@ -82,21 +82,27 @@
 
 - (void)showInputBox
 {
-    [InputBox showInputTitle:@"被投诉人"
-                      inView:self.view
-                  firstLabel:@"姓        名"
-            firstPlaceholder:nil
-                 secondLabel:@"身份证号"
-           secondPlaceholder:nil
-                  thirdLabel:@"工        号"
-            thirdPlaceholder:nil
-           cancelButtonTitle:@"取消"
-             doneButtonTitle:@"确定"
-        doneButtonCompletion:^(NSString *firstValue, NSString *secondValue, NSString *thirdValue) {
-            NSLog(@"%@", firstValue);
-            NSLog(@"%@", secondValue);
-            NSLog(@"%@", thirdValue);
-        }];
+    InputBox *inputBox = [InputBox showInputTitle:@"被投诉人"
+                                           inView:self.view
+                                       firstLabel:@"姓        名"
+                                 firstPlaceholder:nil
+                                      secondLabel:@"身份证号"
+                                secondPlaceholder:nil
+                                       thirdLabel:@"工        号"
+                                 thirdPlaceholder:nil
+                                cancelButtonTitle:@"取消"
+                                  doneButtonTitle:@"确定"
+                             doneButtonCompletion:^(InputBox *inputBox, NSString *firstValue, NSString *secondValue, NSString *thirdValue) {
+                                 
+                                 [inputBox dismiss];
+                                 
+                                 NSLog(@"%@", firstValue);
+                                 NSLog(@"%@", secondValue);
+                                 NSLog(@"%@", thirdValue);
+                                 
+                             }];
+    
+    inputBox.contentView.backgroundColor = [UIColor brownColor];
     
 }
 

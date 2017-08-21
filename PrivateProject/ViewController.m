@@ -93,7 +93,9 @@
            cancelButtonTitle:@"取消"
              doneButtonTitle:@"确定"
         doneButtonCompletion:^(NSString *firstValue, NSString *secondValue, NSString *thirdValue) {
-            
+            NSLog(@"%@", firstValue);
+            NSLog(@"%@", secondValue);
+            NSLog(@"%@", thirdValue);
         }];
     
 }

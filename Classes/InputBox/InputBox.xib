@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputBox">
             <connections>
                 <outlet property="buttonContentView" destination="VcY-up-1Aa" id="AdF-7J-oo8"/>
+                <outlet property="buttonSeparatorView" destination="cOS-wu-5Ao" id="QB5-wM-aPa"/>
                 <outlet property="cancelButton" destination="pGa-w8-lnu" id="MMi-sA-eo8"/>
                 <outlet property="closeButton" destination="IMM-2h-bfN" id="JdZ-Xo-HRV"/>
                 <outlet property="closeButtonContentView" destination="Ma9-Aw-iM3" id="ke3-2o-PhI"/>

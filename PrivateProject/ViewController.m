@@ -10,15 +10,40 @@
 
 #import "InputBox.h"
 
+#import <IQKeyboardManager.h>
+
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *classes;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
+
 @end
 
 @implementation ViewController
+
+/*
+
+@property (nonatomic, assign) BOOL wasKeyboardManagerEnabled;
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    _wasKeyboardManagerEnabled = [[IQKeyboardManager sharedManager] isEnabled];
+    
+    [[IQKeyboardManager sharedManager] setEnable:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[IQKeyboardManager sharedManager] setEnable:_wasKeyboardManagerEnabled];
+}
+ 
+*/
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -102,7 +127,21 @@
                                  
                              }];
     
-    inputBox.contentView.backgroundColor = [UIColor brownColor];
+    inputBox.titleLabel.textColor = [UIColor whiteColor];
+    inputBox.firstLabel.textColor = [UIColor whiteColor];
+    inputBox.secondLabel.textColor = [UIColor whiteColor];
+    inputBox.thirdLabel.textColor = [UIColor whiteColor];
+    inputBox.firstField.textColor = [UIColor whiteColor];
+    inputBox.secondField.textColor = [UIColor whiteColor];
+    inputBox.thirdField.textColor = [UIColor whiteColor];
+    inputBox.contentView.layer.borderWidth = 1.0f;
+    inputBox.contentView.layer.borderColor = [UIColor whiteColor].CGColor;
+    inputBox.contentView.backgroundColor = [UIColor clearColor];
+    
+    inputBox.buttonContentView.layer.borderWidth = 1;
+    inputBox.buttonContentView.layer.borderColor = [UIColor whiteColor].CGColor;
+    inputBox.buttonContentView.backgroundColor = [UIColor clearColor];
+    inputBox.buttonSeparatorView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     
 }
 

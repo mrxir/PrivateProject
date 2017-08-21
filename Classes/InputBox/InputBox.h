@@ -45,6 +45,8 @@ typedef void(^InputCompletionBlock)(InputBox *inputBox, NSString *firstValue, NS
 @property (nonatomic, weak) IBOutlet UIButton *cancelButton;
 @property (nonatomic, weak) IBOutlet UIButton *doneButton;
 
+@property (nonatomic, weak) IBOutlet UIView *buttonSeparatorView;
+
 
 
 + (instancetype)showInputTitle:(NSString *)title

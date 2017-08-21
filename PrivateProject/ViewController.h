@@ -13,3 +13,9 @@
 
 @end
 
+
+@interface CollectionCell : UICollectionViewCell
+
+@property (nonatomic, copy) NSString *title;
+
+@end
